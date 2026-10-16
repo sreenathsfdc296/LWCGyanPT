@@ -1,0 +1,22 @@
+<template>
+    <lightning-tabset>
+        <lightning-tab title='Admin Dashboard' label="Admin Dashboard- LDS">
+            <c-commerce-hub-dashboard></c-commerce-hub-dashboard>
+            </lightning-tab>
+         <lightning-tab title='Product List' label="Product List(Wire As Property)">
+        <c-commerce-hub-product-list></c-commerce-hub-product-list>
+         </lightning-tab>
+         <lightning-tab title='Customer List' label="Customer List(Wire As Function)">
+        <c-commerce-hub-customer-list></c-commerce-hub-customer-list>
+        </lightning-tab>
+         <lightning-tab title='Customer List imp' label="Customer List(As Imperative)">
+        <c-commerce-hubc-list-imperative></c-commerce-hubc-list-imperative>
+         </lightning-tab>
+          <lightning-tab title='Parent to Child' label="Parent to Child">
+        <c-profile-dashboard-parent></c-profile-dashboard-parent>
+         </lightning-tab>
+          <lightning-tab title='Child to Parent' label="Child to Parent">
+            <c-read-notificationsonparent></c-read-notificationsonparent>
+         </lightning-tab>
+    </lightning-tabset>
+</template>

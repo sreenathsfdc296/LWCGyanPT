@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Latest product" icon-name="standard-product">
+        <div class="slds-p-around_medium">
+            <lightning-datatable 
+            key-field="id"
+            data={products.data}
+            columns={columns}
+            hide-checkbox-column
+            show-row-number-column
+            >
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

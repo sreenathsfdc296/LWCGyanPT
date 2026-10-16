@@ -1,0 +1,21 @@
+<!-- customerManagement.html -->
+<template>
+    <lightning-card title="Customer Management" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <lightning-layout vertical-align="end" class="slds-m-bottom_medium">
+                <lightning-layout-item size="10">
+                    <lightning-input 
+                        type="search" 
+                        label="Search Customer" 
+                        placeholder="Enter Customer Name"
+                        onchange={handleSearch}>
+                    </lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!--customet data table-->
+        <lightning-datatable key-field="Id" columns={columns} data={customers} show-row-number-column>
+
+        </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

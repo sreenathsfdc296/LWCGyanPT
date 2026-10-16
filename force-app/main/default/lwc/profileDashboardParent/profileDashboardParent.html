@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <lightning-input label="Employee Name" value={employeeName} onchange={handleChangeName}></lightning-input>
+            <lightning-input label="Employee Department" value={employeeDept} onchange={handleChangeDept}></lightning-input>
+            <lightning-input label="Employee Designation" value={employeeDesig} onchange={handleChangeDesig}></lightning-input>
+            <lightning-input label="Experince" value={employeeExperince} type="number" onchange={handleChangeExperince}></lightning-input>
+            <br>
+            <lightning-button variant="brand" label="Highlight profile" onclick={handleHighlight}></lightning-button>
+         &nbsp;
+         &nbsp;
+     <lightning-button label="Reset profile" onclick={handleResetProfile} variant="destructive-text"></lightning-button>
+        </div>
+        <c-profile-card
+            emp-name={employeeName}
+            emp-dept={employeeDept}
+            emp-role={employeeDesig}
+            emp-exp={employeeExperince}></c-profile-card>
+    </lightning-card>
+   
+</template>

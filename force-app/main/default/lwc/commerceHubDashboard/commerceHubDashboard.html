@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Admin Dashboard" icon-name="utility:store">
+        <div class="slds-p-around_large">
+             <div class="slds-p-around_medium">
+             <c-commerce-hub-addproduct></c-commerce-hub-addproduct>
+            </div>
+           
+            <h1 class="heading">Welcome {adminName} to Commerce Hub</h1>
+            <p class="message">
+                This is the admin dashboard for managing products, categories, inventories, orders and customers
+            </p>
+            <br/>
+             <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Change Admin Name" placeholder="type here..." value={adminName} onchange={handlechangeAdminname}></lightning-input>
+             </div>
+             <br/>
+        <lightning-button variant="brand" label="Change Admin" onclick={handleadminchangeClick} class="slds-m-left_x-small"></lightning-button>
+            <lightning-layout multiple-rows>
+                <lightning-layout-item padding="around-small" size="12" medium-device-size="3">
+                 
+                        <div class="card">
+                            <h2> Total Products: </h2> <h1> {productsCount} </h1>
+                        </div>
+                  
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small" size="12" medium-device-size="3">
+                  
+                        <div class="card">
+                            <h2> Total Orders: </h2> <h1>{ordersCount} </h1>
+                        </div>
+                   
+                </lightning-layout-item>
+                  <lightning-layout-item padding="around-small" size="12" medium-device-size="3">
+                    
+                    
+                        <div class="card">
+                            <h2> Customers: </h2> <h1> {totalCustomers}</h1>
+                        </div>
+                 
+                </lightning-layout-item>
+                  <lightning-layout-item padding="around-small" size="12" medium-device-size="3">
+                  
+                        <div class="card">
+                            <h2> Revenue: </h2> <h1> {revenueTotoal} </h1>
+                        </div>
+                   
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+  </lightning-card>
+</template>

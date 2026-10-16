@@ -1,0 +1,38 @@
+<template>
+    <lightning-card variant="base" title="Employee Dashboard" icon-name="standard:account">
+        <div class="container">
+            <h2>Welcome to my LWC</h2>
+            <hr>
+            <p><strong>Name:</strong> {empName}</p>
+            <p><strong>Designation:</strong> {empDesignation}</p>
+            <p><strong>Department:</strong> {empDepartment}</p>
+            <p><strong>Experience:</strong> {empExp}</p>
+            <p><strong>Project:</strong> {empproject}</p>
+      
+                   <lightning-button label="Active" title="Non-primary action" onclick={handleActive} class="slds-m-left_x-small" variant="brand"></lightning-button>
+                      <lightning-button label="Onleave" title="Non-primary action" onclick={handleoOnleave} class="slds-m-left_x-small" variant="brand"></lightning-button>
+
+        </div>
+        <hr>
+        <div>
+            <h3>Employee Status</h3>
+            <template lwc:if={isActive}>
+                <div class="status active">
+                    Employee is Active
+                </div>
+            </template>
+           
+                <template lwc:elseif={isOnLeave}>
+                    <div class="status leave">
+                        Employee is on leave
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="status inactive">
+                        Employee is Inactive
+                    </div>
+                </template>
+           
+        </div>
+    </lightning-card>
+</template>

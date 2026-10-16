@@ -1,0 +1,89 @@
+<template>
+    <div class="slds-p-around_large">
+             <div class="slds-p-around_medium">
+                <lightning-button variant="brand" label="Create new Product" onclick={createProduct} class="slds-m-left_x-small"></lightning-button>&nbsp;
+            </div>
+            <div>
+             <template lwc:if={showForm}>
+             <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                    <lightning-input label="Product Name" type="text" name="productName" onchange={handleChange}></lightning-input>
+                </lightning-layout-item>
+                 <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                    <lightning-record-picker label="Category" type="text" name="category" onchange={handlecategorychange} object-api-name='Category__c'> </lightning-record-picker>
+                </lightning-layout-item>
+                 <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                    <lightning-combobox label="Product Status" type="text" 
+                    name="Status" 
+                    options={statusoptions}
+                    onchange={handleChange}>
+                </lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                    <lightning-combobox label="Unit Stype" type="text" 
+                    name="Unit" 
+                    options={Unitoptions}
+                    onchange={handleChange}>
+                </lightning-combobox>
+                </lightning-layout-item>
+                 <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                    <lightning-input label="Cost Price" type="number" name="Costprice" onchange={handleChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                    <lightning-input label="Selling Price" type="number" name="Sellingprice" onchange={handleChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" medium-device-size="6" padding="around-small">
+                    <lightning-textarea label="Description" type="text" name="Description" onchange={handleChange}></lightning-textarea>
+                </lightning-layout-item>
+             </lightning-layout>
+             <div>
+                        <lightning-button label="Save Product" variant="brand" onclick={handleSaveProduct}></lightning-button>
+                        &nbsp;
+                        <lightning-button label="Cancel" variant="brand" onclick={handleCancel}></lightning-button>
+
+                    </div>
+            </template>
+            </div>
+            <div>
+                <!---SHOW RECENTLY CREATED RECORD-->
+                <template lwc:if={showProductDetails}>
+                    <lightning-card title="Product Details" icon-name="standard:product">
+                    <div class="slds-p-around_medium">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <tbody>
+                                <tr>
+                                      <th>Product Name</th><td>{productName}</td>
+                                </tr>
+                                <tr>
+                                      <th>Product Status</th><td>{Status}</td>
+                                </tr>
+                                <tr>
+                                      <th>Cost Price</th><td>{Costprice}</td>
+                                </tr>
+                                <tr>
+                                      <th>Selling price</th><td>{Sellingprice}</td>
+                                </tr>
+                                <tr>
+                                      <th>Product Description</th><td>{Description}</td>
+                                </tr>
+                                <tr>
+                                      <th>Category</th><td>{category}</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="slds-m-top_medium slds-text-align_right">
+                            <lightning-button 
+                            label="Navigate" 
+                            variant="brand" 
+                            icon-name="utility:new_window" 
+                            onclick={handleNavigate}>
+                            </lightning-button>
+                    </div>
+
+                    </lightning-card>
+                </template>
+            </div>
+        </div>
+</template>
