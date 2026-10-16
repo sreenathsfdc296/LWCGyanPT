@@ -1,3 +1,4 @@
+//Written by Sreenath
 public class Fetchproductdetailswire {
     @AuraEnabled(Cacheable=true)
     public static List<Product__c> getProducts() {
