@@ -1,4 +1,6 @@
 public class customerList {
+
+    //remove test
     //searchKey ='P';
     @AuraEnabled(Cacheable=true)
     public static list<Customer__c> getCustomerata(String searchKey){
