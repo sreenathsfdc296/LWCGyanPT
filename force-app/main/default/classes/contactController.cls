@@ -1,4 +1,5 @@
 public with sharing class contactController {
+    //test controller
     @AuraEnabled(cacheable=true)
     public static list<contact> getContacts(string accid){
         try {
